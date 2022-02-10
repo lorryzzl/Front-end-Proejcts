@@ -213,18 +213,70 @@ select{
     border-radius: 7px;
 }
 
+.baomingButton {
+    position: relative;
+    width: 100px;
+    height: 60px;
+    background: #4fb9ff;
+    border-radius: 5px;
+    align-self: center;
+    right: 25px;
+    color: white;
+    font-size: 18px;
+}
+
+.alert1{
+    position: absolute;
+    left: 33%;
+    margin: 0px;
+    width: calc(34vw);
+    height: 35px;
+    text-align: center;
+    background: rgb(255, 105, 105);
+    border-radius: 6px;
+    line-height: 35px;
+    top: 520px;
+    visibility: hidden;
+}
+
+.alert2{
+    position: absolute;
+    left: 33%;
+    margin: 0px;
+    width: calc(34vw);
+    height: 35px;
+    text-align: center;
+    background: rgb(255, 105, 105);
+    border-radius: 6px;
+    line-height: 35px;
+    top: 520px;
+    visibility: hidden;
+}
+
+.alert3{
+    position: absolute;
+    left: 24%;
+    margin: 0px;
+    width: calc(52vw);
+    height: 35px;
+    text-align: center;
+    background: rgb(152, 255, 143);
+    border-radius: 6px;
+    line-height: 35px;
+    top: 500px;
+    visibility: hidden;
+}
+
 input:focus{
     border-color: #66afe9;
     outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+    box-shadow: 0 0 8px rgba(102,175,233,.6);
 }
 
 select:focus{
     border-color: #66afe9;
     outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+    box-shadow: 0 0 8px rgba(102,175,233,.6);
 }
 
 #submitButton{
@@ -238,5 +290,104 @@ select:focus{
     background: rgb(0, 140, 255);
     opacity: 0.7;
 }
-            
 
+.keChengTitle{
+    position: absolute;
+    left: 45%;
+    margin: auto;
+    letter-spacing: 20px;
+    top: 860px;
+}
+
+.courseSelect{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    width: 270px;
+    right: 20%;
+    top: 900px;
+    justify-content: space-around;
+    height: 35px;
+    background: #7fccff;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.kechengList{
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    width: calc(60vw);
+    height: 670px;
+    display: flex;
+    top: 920px;
+    flex-direction: column;
+}
+
+.course1{    
+    flex:1;
+    display: inline;
+}
+
+.courseImg{
+    float: left;
+    margin: 40px;
+    border-radius: 50%;
+}
+
+.course2{
+    flex:1;
+    display: inline;
+}
+
+.course3{
+    flex:1;
+    display: inline;
+}
+
+.course4{
+    flex:1;
+    display: inline;
+}
+
+footer{
+    display: flex;
+    background: rgb(214, 214, 214);
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 1750px;
+    width: calc(60vw);
+    height: 250px;
+    flex-direction: row;
+}
+
+.footer1{
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.IFE{
+    font-size: 30px;
+    color: white;
+    padding: auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: black;
+    text-align: center;
+    line-height: 60px;
+}
+
+.footer2{
+    flex-basis: 18%;
+    line-height: 10px;
+    align-self: center;
+}
+
+h5{
+    color: rgb(95, 95, 95);
+}
