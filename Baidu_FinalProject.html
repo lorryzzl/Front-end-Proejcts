@@ -17,6 +17,11 @@
             <a href="#" class="tab-choose">开源联盟</a>
             <a href="#" class="tab-choose-guanLi">管理中心</a>
         </div>
+        <div class="dropdowns">
+            <a href="#">账号管理</a>
+            <a href="#">我的课程</a>
+            <a href="#">查看成绩</a>
+        </div>
         <h1 class="slogan">百度前端训练营2021开营了，赶紧报名吧!</h1>
         <h2 class="zongZhi">我们的宗旨</h2>
         <div class="zongZhiList">
@@ -132,6 +137,21 @@
     </body>
 
     <script>
+        let guanli=document.getElementsByClassName("tab-choose-guanLi")[0];
+        guanli.addEventListener("mouseenter", function(){
+            let drop=document.getElementsByClassName("dropdowns")[0];
+            drop.style.display='block';
+        }, false);
+
+        let drop=document.getElementsByClassName("dropdowns")[0];
+        drop.addEventListener("mouseenter", function(){
+            drop.style.display='block';
+        }, false);
+
+        drop.addEventListener("mouseleave", function(){
+            drop.style.display='none';
+        }, false);
+
         const submitDom=document.getElementsByClassName("baomingButton")[0];
         submitDom.addEventListener("click", function(){
         let schoolValue=document.getElementById("schoolInputText").value;
