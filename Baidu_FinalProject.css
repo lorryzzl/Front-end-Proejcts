@@ -57,7 +57,31 @@
     color: white;
     margin: 10px;
     text-decoration: none;
+    font-size: 17px;
+    z-index: 1;
+}
 
+.dropdowns a{
+    display: block;
+    padding: 13px 7px 13px 20px;
+    font-size: 17px;
+    text-decoration: none;
+    color:rgb(68, 68, 68)
+}
+
+.dropdowns {
+    position: absolute;
+    display: none;
+    top: 65px;
+    left: 1099px;
+    background-color: #f9f9f9;
+    width: 107px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.tab-choose-guanLi:hover{
+    background: rgb(0, 108, 248);
 }
 
 .tab-choose:hover{
