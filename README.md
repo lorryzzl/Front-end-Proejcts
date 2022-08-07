@@ -1,2 +1,2 @@
-# Baidu_FinalProject
-Baidu Front-end Bootcamp
+# Front-end Project
+Web development with HTML, CSS, and JS.
