@@ -1,0 +1,279 @@
+<html>
+    <head>
+        <title>My To-Do List</title>
+        <script src="https://kit.fontawesome.com/6cc41925ca.js" crossorigin="anonymous"></script>
+        <script src="todoapp.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    </head>
+    <body>
+        <div align="center">
+            <i class="fa-solid fa-thumbtack fa-xl"></i>&nbsp;&nbsp;
+            <h1>To-Do List App</h1>&nbsp;&nbsp;
+            <i class="fa-solid fa-thumbtack fa-xl"></i>
+        </div>
+        <h3 align="center">New ToDos!</h3>
+        <div align="center">
+            <input type="text" class="todo">
+            <br><br><br>
+            <button class="addbutn" onclick="add()">Add a New ToDo</button>
+            <button class="deleteallbutn" onclick="deleteall()">Delete All</button>
+        </div>
+        <br>
+        <br>
+        <span id="opennavbutn" style="font-size:18px;cursor:pointer;color:black" onclick="openNav()">&#9776; Open Finished List</span>
+        <div class="done">
+            <div align="right" class="closebutn" onclick="closeNav()">&times;</div>
+            <h4 align="center" id="finishtitle">Finished List</h4>
+            <ul class="donelist">
+
+            </ul>
+        </div>
+        <div class="content">
+            <ul class="todolist">
+
+            </ul>
+            <div class="marklist">
+
+            </div>
+            <div class="editlist">
+
+            </div>
+            <div class="deletelist">
+            
+            </div>
+        </div>
+        <div class="menu">
+            <div class="setdatediv"><a href="#" style="text-decoration: none; color: black;" id="setdatebutn"><i class="fa-solid fa-calendar-days fa-xl"></i>
+                Set Date</a></div>
+            <div class="profilediv"><a href="#" style="text-decoration: none; color:black;" id="profile"><i class="fa-solid fa-user fa-xl"></i>
+                Profile</a></div>
+            <div class="chatdiv"><a href="#" style="text-decoration: none; color:black;" id="chat"><i class="fa-solid fa-comments fa-xl"></i>
+                Chat</a></div>
+            <div class="sharediv"><a href="#" style="text-decoration: none; color: black;" id="share"><i class="fa-solid fa-share-from-square fa-xl"></i>
+                Share</a></div>
+            <div class="menu-blank"></div>
+        </div>   
+    </body>
+</html>
+
+<style>
+    .menu{
+        position:fixed;
+        left: 90%;
+        right: 0%;
+        top: 0;
+        bottom: 0;
+        background-color: rgb(224, 224, 224);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    a{
+        font-size: 20px;
+    }
+
+    h1{
+        color: green;
+        display: inline;
+    }
+
+    input {
+        width: 400px;
+        height: 50px;
+    }
+
+    input:focus{
+        border-color: rgba(9, 189, 48, 0.6);
+        outline: 0;
+        box-shadow: 0 0 10px rgba(9, 189, 48, 0.6);
+    }  
+
+    .addbutn{
+        background-color: rgb(0, 218, 0);
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .deleteallbutn{
+        background-color: rgb(227, 86, 86);
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .content{
+        position: absolute;
+        display: flex;
+        left: 25%;
+        right: 17%;
+        flex-direction: row;
+    }
+
+    .todolist{
+        flex-grow: 0.76;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .marklist{
+        flex-grow: 0.08;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .editlist{
+        flex-grow: 0.08;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .deletelist{
+        flex-grow: 0.08;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .todoitem{
+        margin: 10px;
+    }
+
+    .deletediv{
+        font-size: 15px;
+        color: white;
+        width: 70px;
+        height: 21px;
+        margin: 10px;
+        padding: 0px;
+        background-color: rgb(244, 49, 49);
+        text-align: center;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .editdiv{
+        font-size: 15px;
+        color: rgb(0, 0, 0);
+        width: 70px;
+        height: 21px;
+        margin: 10px;
+        padding: 0px;
+        background-color:  rgba(9, 189, 48, 0.6);;
+        text-align: center;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .editinput{
+        position: absolute;
+        height: 21px;
+        margin: 0px;
+        border-radius: 4px;
+        padding: 0px;
+        box-shadow: 0 0 10px rgba(9, 189, 48, 0.6);
+    }
+
+    .notice{
+        font-size: 12px;
+        font-style: italic;
+    }
+
+    #opennavbutn{
+        position: fixed;
+        justify-self: center;
+        left: 0%;
+        padding: 5px 5px 5px 10px;
+        background-color: darkgray;
+        transition-delay: 0.5s;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .done{
+        position: fixed;
+        left: 0%;
+        width: 0px;
+        top: 0%;
+        bottom: 0%;
+        border-right-width: 5px;
+        border-left-width: 0px;
+        border-color:rgba(9, 189, 48, 0.6);
+        border-style: solid;
+        padding: 0px;
+        margin: 0px;
+        word-wrap: break-word;
+        z-index: 1;
+        transition: 0.5s;
+        visibility: hidden;
+    }
+
+    .markbutn{
+        font-size: 15px;
+        color: rgb(0, 0, 0);
+        width: 70px;
+        height: 21px;
+        margin: 10px;
+        padding: 0px;
+        background-color:  rgba(9, 189, 48, 0.6);;
+        text-align: center;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .closebutn{
+        cursor: pointer;
+        color: rgb(255, 98, 98);
+        padding: 10px;
+        font-size: 27px;
+    }
+
+    #finishtitle{
+        transition-delay: 0s;
+    }
+
+    .addbutn:hover, 
+    .addbutn:focus{
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.916);
+    }
+
+    .deleteallbutn:hover, 
+    .deleteallbutn:focus{
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.916);
+    }
+
+    .confirm{
+        display: flex;
+        border-radius: 5px;
+    }
+
+    .confirm:hover{
+        background-color: lightgray;
+    }
+
+    .confirmtext{
+        font-weight: bold;
+    }
+
+    .confirmbutn, .cancelbutn{
+        margin-left: 15px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .confirmbutn{
+        color: rgb(5, 153, 35);
+    }
+
+    .cancelbutn{
+        color:rgb(255, 98, 98);
+    }
+
+    a{
+        display: block;
+        
+    }
+</style>
+
